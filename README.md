@@ -8,7 +8,7 @@
         <li><strong>Vedoucí práce</strong>: Tomáš Kazda</li>
         <li><strong>Oponent</strong>: Ondřej Vacek</li>
         <li><strong>Rok</strong>: 2024</li>
-        <li><strong>Repozitář</strong>: <a href="https://github.com/pslib-cz/MP2024-25_Kraus-Ivan_Navrh-a-tvorba-firemni-aplikace-pro-vykazy">GitHub link</a></li>
+        <li><strong>Odkaz na repozitář:</strong>: <a href="https://github.com/pslib-cz/MP2024-25_Kraus-Ivan_Navrh-a-tvorba-firemni-aplikace-pro-vykazy">GitHub link</a></li>
     </ul>
 </div>
 
