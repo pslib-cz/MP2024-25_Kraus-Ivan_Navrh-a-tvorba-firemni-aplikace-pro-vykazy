@@ -22,7 +22,7 @@
 
 <div class="section">
     <h2 class="section-title">Popis projektu</h2>
-    <p>Cílem práce je analyzovat stávající zastaralou firemní aplikaci Výkazovník používanou firmou pro vykazování odvedené práce. Na základě zpětné vazby od uživatelů aplikace bude navržena a vytvořena nová aplikace pomocí Vue.js, která bude napojena na již existující interní systém firmy prostřednictvím API. Nová aplikace by měla být uživatelsky přívětivější a efektivnější.</p>
+    <p>Cílem práce je analyzovat stávající zastaralou firemní aplikaci Výkazovník používanou firmou pro vykazování odvedené práce. Na základě zpětné vazby od uživatelů aplikace bude navržena a vytvořena nová aplikace pomocí React.js, která bude napojena na již existující interní systém firmy prostřednictvím API. Nová aplikace by měla být uživatelsky přívětivější a efektivnější.</p>
 </div>
 
 <div class="section">
