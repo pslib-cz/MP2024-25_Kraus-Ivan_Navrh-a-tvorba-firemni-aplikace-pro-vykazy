@@ -16,7 +16,7 @@
     <h2 class="section-title">Design a dokumentace</h2>
     <ul>
         <li><strong>Figma návrh</strong>: <a href="https://www.figma.com/design/2ffU1Qy1nT7YSvA58nPPcX/V%C3%BDkazovn%C3%ADk-V3.0?node-id=0-1&node-type=canvas&t=p64xKF2cOvSfoxuJ-0">Odkaz na Figmu</a></li>
-        <li><strong>Návrh databáze</strong>: <a href="./Documentation/DatabaseScheme/vykazovnik_db_scheme.drawio">Odkaz do složky s návrhem databáze</a></li>
+        <li><strong>Návrh databáze</strong>: <a href="./Documentation/Database/">Odkaz do složky s návrhem databáze</a></li>
     </ul>
 </div>
 
