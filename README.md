@@ -1,4 +1,4 @@
-<h1>Dlouhodobá maturitní práce - Výkazovník V3.0</h1>
+<h1>Dlouhodobá maturitní práce - Výkazovník V4.0</h1>
 <div class="section">
     <h2 class="section-title">Obecné informace</h2>
     <ul>
