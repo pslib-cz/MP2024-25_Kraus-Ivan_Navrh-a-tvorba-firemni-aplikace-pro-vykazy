@@ -1,0 +1,112 @@
+@use '@/Variables' as *;
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal {
+    background-color: $white;
+    border-radius: 1rem;
+    box-shadow: $shadow-dropdown;
+    max-width: 32rem;
+    width: 90%;
+    padding: 2rem;
+    text-align: center;
+    animation: fadeIn 0.3s ease-out;
+
+    @media (max-width: 1075px) {
+        padding: 1.5rem;
+        max-width: 90vw;
+    }
+
+    .header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 1rem;
+
+        .icon {
+            font-size: 2rem;
+            color: $smworks-color;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0.5rem 0 0;
+            color: $blue-dark;
+        }
+    }
+
+    .body {
+        margin-bottom: 1.5rem;
+        font-size: 1rem;
+        color: $grey;
+
+        p {
+            text-wrap: wrap;
+            margin: 0;
+
+            span {
+                text-wrap: wrap;
+                color: $smworks-color;
+            }
+        }
+    }
+
+    .footer {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+
+        button {
+            padding: 0.5rem 1.5rem;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+
+            &.cancelButton {
+                background-color: $white;
+                color: $blue-dark;
+                border: 2px solid $blue-dark;
+
+                &:hover {
+                    background-color: $blue-dark;
+                    color: $white;
+                }
+            }
+
+            &.confirmButton {
+                background-color: $smworks-color;
+                color: $white;
+                border: none;
+
+                &:hover {
+                    background-color: darken($smworks-color, 10%);
+                }
+            }
+        }
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

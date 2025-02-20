@@ -1,0 +1,287 @@
+@use '@/Variables' as *;
+
+.menu {
+    position: sticky;
+    top: 1.875rem;
+    background: $blue-dark;
+    color: white;
+    height: calc(100vh - 3.75rem);
+    max-height: 75rem;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    transition: 0.2s ease-in-out;
+    overflow: hidden;
+    margin-top: 1.875rem;
+    border-radius: 0 0.75rem 0.75rem 0;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    justify-content: start;
+    align-items: center;
+    box-shadow: $shadow-dropdown;
+
+    &.open {
+        width: 12.5rem;
+
+        .menuList {
+            width: fit-content;
+
+            li {
+                width: 100%;
+                justify-content: start;
+                padding-left: 1rem;
+                padding-right: 1rem;
+
+                span {
+                    width: 100%;
+                    opacity: 1;
+                }
+            }
+        }
+
+        .footer {
+            button {
+                width: 11.0625rem;
+                gap: 0.75rem;
+                max-width: unset;
+
+                &.logout {
+                    svg {
+                        width: 1.15rem;
+                    }
+                }
+
+                span {
+                    width: 100%;
+                    opacity: 1;
+                    text-align: start;
+                }
+            }
+        }
+    }
+
+    &:not(.open) {
+        width: 4rem;
+
+        .menuList {
+            width: 2.625rem;
+
+            li {
+                justify-content: center;
+                width: 100%;
+                gap: 0;
+
+                span {
+                    width: 0;
+                    opacity: 0;
+                }
+            }
+        }
+    }
+
+    .toggle {
+        cursor: pointer;
+        text-align: center;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        svg {
+            font-size: 1.563rem;
+        }
+    }
+
+    .divider {
+        height: 0.0625rem;
+        background: rgba(255, 255, 255, 0.25);
+        margin: 1rem 0;
+        width: 80%;
+        display: flex;
+        align-self: center;
+        justify-content: center;
+        margin-top: 0.5rem;
+    }
+
+    .menuList {
+        flex: 1;
+        list-style: none;
+        padding: 0;
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        justify-content: start;
+        align-items: start;
+
+        li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            cursor: pointer;
+            white-space: nowrap;
+            color: $white;
+            transition: 0.3s;
+            justify-content: start;
+            border-radius: 0.5rem;
+            width: 2.625rem;
+            height: 2.625rem;
+            text-align: start;
+
+            &:hover {
+                background: $smworks-color;
+                @media (max-width: 1079px) {
+                    background: none;
+                }
+            }
+
+            &.active {
+                background: $smworks-color;
+            }
+
+            svg {
+                font-size: 1.25rem;
+                width: 1.25rem;
+                height: 1.25rem;
+            }
+
+            span {
+                color: $white;
+                font-size: 0.875rem;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 1rem;
+        transition: $default-transition;
+
+        button {
+            white-space: nowrap;
+            width: 100%;
+            max-width: 2.625rem;
+            height: 2.625rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0;
+            padding-left: 1rem;
+            padding-right: 1rem;
+
+            &.active {
+                background: $smworks-color !important;
+            }
+
+            svg {
+                font-size: 1.25rem;
+                width: 1.25rem;
+                height: 1.25rem;
+            }
+
+            span {
+                width: 0;
+                opacity: 0;
+                white-space: nowrap;
+                font-weight: bold;
+                font-size: 0.875rem;
+            }
+        }
+
+        button:nth-child(1) {
+            background: none;
+            color: $white;
+            border: none;
+            cursor: pointer;
+            border-radius: 0.5rem;
+            transition: $default-transition;
+
+            &:hover {
+                background: $smworks-color;
+            }
+        }
+
+        button:nth-child(2) {
+            background: none;
+            color: $white;
+            border: none;
+            cursor: pointer;
+            border-radius: 0.5rem;
+            transition: $default-transition;
+
+            svg {
+                transform: scaleX(-1);
+                display: inline-block;
+            }
+
+            &:hover {
+                background: $smworks-color;
+            }
+        }
+    }
+}
+
+@media (max-width: 1079px) {
+    .menu:not(.open) {
+        width: 100%;
+        height: 3.75rem;
+        max-width: calc(100vw - 1.25rem);
+        position: fixed;
+        bottom: 0.75rem;
+        border-radius: 1.25rem;
+        left: 50%;
+        translate: -50%;
+        top: auto;
+        box-shadow: $shadow-dropdown;
+        padding: 0;
+        margin: 0;
+        flex-direction: row;
+        justify-content: center;
+
+        .menuList {
+            width: 100%;
+            flex: 0;
+            height: 3.75rem;
+            margin: 0;
+            gap: 2.75rem;
+            justify-content: space-around;
+            align-items: center;
+
+            li {
+                width: 2.625rem;
+                height: 2.625rem;
+
+                svg {
+                    font-size: 1.563rem;
+                    width: 1.563rem;
+                    height: 1.563rem;
+                }
+            }
+
+            display: flex;
+            flex-direction: row;
+
+            li span {
+                display: none;
+            }
+        }
+
+        .toggle {
+            display: none;
+        }
+
+        .divider {
+            display: none;
+        }
+
+        .footer {
+            display: none;
+        }
+    }
+}

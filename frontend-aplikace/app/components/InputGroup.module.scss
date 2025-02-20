@@ -1,0 +1,124 @@
+@use '@/Variables' as *;
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    justify-content: center;
+
+
+    @media (max-width: 1075px) {
+        align-items: center;
+    }
+
+    & > div {
+        width: 100%;
+    }
+
+    &.searchInput {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 2.5rem;
+        position: relative;
+
+        svg {
+            position: absolute;
+            font-size: 0.875rem;
+            top: 50%;
+            right: 1rem;
+            transform: translateY(-50%);
+
+            path {
+                display: block;
+            }
+
+            &.svg-inline--fa {
+                path {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    label {
+        font-size: 0.875rem;
+        font-weight: bold;
+        color: $blue-dark;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.5rem;
+
+        @media (max-width: 1075px) {
+            width: 100%;
+            max-width: unset;
+            margin-left: 0.25rem;
+        }
+    }
+
+    input {
+        width: 100%;
+        padding: 0.75rem;
+        border: 2px solid $blue-dark;
+        font-weight: 500;
+        font-size: 1rem;
+        border-radius: 0.5rem;
+
+        @media (max-width: 1075px) {
+            width: 100%;
+            max-width: unset;
+        }
+
+        &:focus {
+            border-color: $smworks-color;
+            outline: none;
+            box-shadow: 0 0 0.25rem rgba($smworks-color, 0.5);
+        }
+
+
+        &.small {
+            font-size: 0.875rem;
+            height: 2.5rem;
+        }
+
+        &.searchInput {
+            height: 2.5rem;
+            font-size: 0.875rem;
+
+            &:focus {
+                outline: none;
+                border-color: #eb6608;
+
+                & + label {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    input[type="search"] {
+        &::-webkit-search-cancel-button {
+            display: none;
+            appearance: none;
+        }
+    }
+
+}
+
+.inputGroup textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid $blue-dark;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    resize: vertical;
+    font-weight: 500;
+    font-family: inherit;
+
+    &:focus {
+        border-color: $smworks-color;
+        outline: none;
+        box-shadow: 0 0 0.25rem rgba($smworks-color, 0.5);
+    }
+}

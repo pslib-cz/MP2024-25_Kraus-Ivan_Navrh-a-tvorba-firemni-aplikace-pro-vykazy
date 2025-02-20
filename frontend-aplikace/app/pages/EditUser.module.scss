@@ -1,0 +1,135 @@
+@use '@/Variables' as *;
+
+.layoutContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 1.875rem;
+    justify-content: space-between;
+    flex: 1;
+    margin-bottom: 1rem;
+
+    @media (max-width: 1075px) {
+        display: block;
+    }
+
+    .contentContainer {
+        margin-top: 1.875rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 1.875rem;
+        margin-right: 1.875rem;
+
+        @media (max-width: 1075px) {
+            margin: 0;
+            margin-bottom: 6rem;
+            margin-top: 0.5rem;
+        }
+
+        .content {
+            background-color: $white;
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            color: $blue-dark;
+            border-radius: 0.5rem;
+            box-shadow: $shadow-dropdown;
+
+            @media (max-width: 1075px) {
+                width: 90vw;
+                box-shadow: none;
+                padding: 0;
+                margin: 0 auto;
+                background-color: $off-white;
+            }
+
+            .userTitle {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 0.5rem;
+                width: 100%;
+                max-width: 47rem;
+
+                img {
+                    width: 6rem;
+                    height: 6rem;
+                    border-radius: 0.5rem;
+                    object-fit: cover;
+                }
+
+                margin-bottom: 0.5rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+                font-weight: bold;
+                color: $blue-dark;
+                text-align: start;
+                margin: 0;
+                width: 100%;
+                max-width: 47rem;
+
+                span {
+                    margin-left: 0.5rem;
+                    color: $smworks-color;
+                }
+            }
+
+            form {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+                max-width: 47rem;
+                width: 100%;
+
+                @media (max-width: 1075px) {
+                    grid-template-columns: 1fr;
+                }
+
+                .buttonContainer {
+                    grid-column: span 2;
+                    display: flex;
+                    justify-content: center;
+
+                    @media (max-width: 1075px) {
+                        grid-column: span 1;
+                    }
+
+                    button {
+                        background-color: $smworks-color;
+                        color: $white;
+                        font-size: 1rem;
+                        font-weight: bold;
+                        padding: 0.75rem 1.5rem;
+                        border: none;
+                        border-radius: 0.5rem;
+                        cursor: pointer;
+                        width: 100%;
+                        transition: background-color 0.3s;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 0.5rem;
+                        margin-top: 0.5rem;
+
+                        &:hover {
+                            background-color: darken($smworks-color, 10%);
+                        }
+
+                        &:disabled {
+                            background-color: $grey-light;
+                            cursor: not-allowed;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
