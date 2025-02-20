@@ -25,17 +25,21 @@
                 Odkaz na Wireframy
             </a>
         </li>
+                <li><strong>Dokumentace aplikace Výkazovník (databáze a endpointy)</strong>: 
+            <a href="https://pslib-my.sharepoint.com/:w:/g/personal/ivan_kraus_021_pslib_cz/EZ3LniWBdelEuDf6-hw_ALQBZ4RLRblriL8OP5PGEd4KGg?e=jMcg2G">
+                Odkaz na dokumentaci
+            </a>
+        </li>
         <li><strong>Návrh databáze</strong>: 
-            <a href="./Documentation/Database/">Odkaz do složky s návrhem databáze</a>
+            <a href="./Documentation/Database/">Odkaz na diagram návrhu databáze</a>
         </li>
     </ul>
-    <img src="./Documentation/Database/vykazovnik_db_scheme.drawio.png" alt="Návrh databáze" width="600">
 </div>
 
 
 <div class="section">
     <h2 class="section-title">Dokument maturitní práce</h2>
-    <p>Oficiální dokumentace maturitní práce je dostupná zde:</p>
+    <p>Oficiální dokument maturitní práce je dostupný zde:</p>
     <ul>
         <li><strong>Maturitní práce</strong>: <a href="">Odkaz na dokument</a></li>
     </ul>
