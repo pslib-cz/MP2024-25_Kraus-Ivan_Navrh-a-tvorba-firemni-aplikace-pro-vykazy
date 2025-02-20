@@ -15,12 +15,11 @@
 <div class="section">
     <h2 class="section-title">Design a dokumentace</h2>
     <ul>
-        <li><strong>Figma návrh</strong>: <a href="https://www.figma.com/design/2ffU1Qy1nT7YSvA58nPPcX/V%C3%BDkazovn%C3%ADk-V3.0?node-id=0-1&node-type=canvas&t=p64xKF2cOvSfoxuJ-0">Odkaz na Figmu</a></li>
-        <li><strong>Wireframy</strong>: <a href="https://www.figma.com/design/XYZ">Odkaz na Wireframy</a></li>
-        <li><strong>Grafický design</strong>: <a href="https://www.figma.com/design/ABC">Odkaz na Design</a></li>
+        <li><strong>Figma grafický design</strong>: <a href="[https://www.figma.com/design/2ffU1Qy1nT7YSvA58nPPcX/V%C3%BDkazovn%C3%ADk-V3.0?node-id=0-1&node-type=canvas&t=p64xKF2cOvSfoxuJ-0](https://www.figma.com/design/2ffU1Qy1nT7YSvA58nPPcX/V%C3%BDkazovn%C3%ADk-V4.0?node-id=19-2&p=f&t=CvkypDnicCBvmVl6-0)">Odkaz na Figmu</a></li>
+        <li><strong>Wireframy</strong>: <a href="[https://www.figma.com/design/XYZ](https://www.figma.com/design/2ffU1Qy1nT7YSvA58nPPcX/V%C3%BDkazovn%C3%ADk-V4.0?node-id=0-1&p=f&t=CvkypDnicCBvmVl6-0)">Odkaz na Wireframy</a></li>
         <li><strong>Návrh databáze</strong>: <a href="./Documentation/Database/">Odkaz do složky s návrhem databáze</a></li>
     </ul>
-    <img src="./Documentation/Database/db-design.png" alt="Návrh databáze" width="600">
+    <img src="./Documentation/Database/" alt="Návrh databáze" width="600">
 </div>
 
 <div class="section">
