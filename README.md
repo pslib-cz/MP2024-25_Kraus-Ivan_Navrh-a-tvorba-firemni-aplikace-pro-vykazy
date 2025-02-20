@@ -29,7 +29,7 @@
             <a href="./Documentation/Database/">Odkaz do složky s návrhem databáze</a>
         </li>
     </ul>
-    <img src="./Documentation/Database/db-design.png" alt="Návrh databáze" width="600">
+    <img src="./Documentation/Database/vykazovnik_db_scheme.drawio.png" alt="Návrh databáze" width="600">
 </div>
 
 
