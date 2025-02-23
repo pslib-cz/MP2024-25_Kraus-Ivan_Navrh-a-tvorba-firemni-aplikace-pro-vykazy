@@ -41,7 +41,7 @@
     <h2 class="section-title">Dokument maturitní práce</h2>
     <p>Oficiální dokument maturitní práce je dostupný zde:</p>
     <ul>
-        <li><strong>Maturitní práce</strong>: <a href="">Odkaz na dokument</a></li>
+        <li><strong>Maturitní práce</strong>: <a href="https://pslib-my.sharepoint.com/:w:/g/personal/ivan_kraus_021_pslib_cz/EREstno_YAhAhziebQxfJUUBafY1LVzwNe0VrICEOoC6Yw?e=sAltPh">Odkaz na dokument</a></li>
     </ul>
 </div>
 
