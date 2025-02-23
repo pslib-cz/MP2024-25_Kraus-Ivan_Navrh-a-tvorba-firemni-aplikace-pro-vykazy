@@ -33,6 +33,10 @@
         <li><strong>Návrh databáze</strong>: 
             <a href="./Documentation/Database/">Odkaz na diagram návrhu databáze</a>
         </li>
+       <li><strong>Diagram sitemapy</strong>: 
+            <a href="./Documentation/Database/">Desktopová sitemap</a>
+             <a href="./Documentation/Database/">Mobilní sitemap</a>
+        </li>
     </ul>
 </div>
 
