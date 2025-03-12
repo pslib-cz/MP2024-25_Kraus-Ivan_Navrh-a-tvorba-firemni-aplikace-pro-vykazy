@@ -1,0 +1,250 @@
+{
+    "name": "Výkazovník",
+    "short_name": "Výkazovník",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#F4F4F4",
+    "theme_color": "#F4F4F4",
+    "description": "Aplikace Výkazovník pro správu výkazů.",
+    "id": "/",
+    "lang": "cs",
+    "scope": "/",
+    "categories": ["productivity", "business", "utilities"],
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "/assets/icons/ios/16.png",
+            "sizes": "16x16",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/ios/20.png",
+            "sizes": "20x20",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/ios/29.png",
+            "sizes": "29x29",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/ios/32.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/ios/40.png",
+            "sizes": "40x40",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/ios/50.png",
+            "sizes": "50x50",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/ios/57.png",
+            "sizes": "57x57",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/ios/58.png",
+            "sizes": "58x58",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/ios/60.png",
+            "sizes": "60x60",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/ios/64.png",
+            "sizes": "64x64",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/ios/72.png",
+            "sizes": "72x72",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/ios/76.png",
+            "sizes": "76x76",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/ios/80.png",
+            "sizes": "80x80",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/ios/87.png",
+            "sizes": "87x87",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/ios/100.png",
+            "sizes": "100x100",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/ios/114.png",
+            "sizes": "114x114",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/ios/120.png",
+            "sizes": "120x120",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/ios/128.png",
+            "sizes": "128x128",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/ios/144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/ios/152.png",
+            "sizes": "152x152",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/ios/167.png",
+            "sizes": "167x167",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/ios/180.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/ios/192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/ios/256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/ios/512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/ios/1024.png",
+            "sizes": "1024x1024",
+            "type": "image/png"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "/assets/screenshots/screenshot-430x932.png",
+            "sizes": "430x932",
+            "type": "image/png",
+            "form_factor": "narrow"
+        },
+        {
+            "src": "/assets/screenshots/screenshot-1280x720.png",
+            "sizes": "1280x720",
+            "type": "image/png",
+            "form_factor": "wide"
+        },
+        {
+            "src": "/assets/screenshots/screenshot-1440x1080.png",
+            "sizes": "1440x1080",
+            "type": "image/png",
+            "form_factor": "wide"
+        },
+        {
+            "src": "/assets/screenshots/screenshot-1920x1080.png",
+            "sizes": "1920x1080",
+            "type": "image/png",
+            "form_factor": "wide"
+        },
+        {
+            "src": "/assets/screenshots/screenshot-2560x1440.png",
+            "sizes": "2560x1440",
+            "type": "image/png",
+            "form_factor": "wide"
+        }
+    ],
+    "splash_screens": [
+        {
+            "src": "/assets/icons/splashscreens/4__iPhone_SE__iPod_touch_5th_generation_and_later_landscape.png",
+            "sizes": "1136x640",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/splashscreens/4__iPhone_SE__iPod_touch_5th_generation_and_later_portrait.png",
+            "sizes": "640x1136",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/splashscreens/8.3__iPad_Mini_landscape.png",
+            "sizes": "2266x1488",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/splashscreens/8.3__iPad_Mini_portrait.png",
+            "sizes": "1488x2266",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/splashscreens/9.7__iPad_Pro__7.9__iPad_mini__9.7__iPad_Air__9.7__iPad_landscape.png",
+            "sizes": "2048x1536",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/splashscreens/9.7__iPad_Pro__7.9__iPad_mini__9.7__iPad_Air__9.7__iPad_portrait.png",
+            "sizes": "1536x2048",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/splashscreens/10.2__iPad_landscape.png",
+            "sizes": "2160x1620",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/splashscreens/10.2__iPad_portrait.png",
+            "sizes": "1620x2160",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/splashscreens/10.5__iPad_Air_landscape.png",
+            "sizes": "2224x1668",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/splashscreens/10.5__iPad_Air_portrait.png",
+            "sizes": "1668x2224",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/splashscreens/10.9__iPad_Air_landscape.png",
+            "sizes": "2360x1640",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/splashscreens/10.9__iPad_Air_portrait.png",
+            "sizes": "1640x2360",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/splashscreens/iPhone_8__iPhone_7__iPhone_6s__iPhone_6__4.7__iPhone_SE_landscape.png",
+            "sizes": "1334x750",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/splashscreens/iPhone_8__iPhone_7__iPhone_6s__iPhone_6__4.7__iPhone_SE_portrait.png",
+            "sizes": "750x1334",
+            "type": "image/png"
+        }
+    ]
+}

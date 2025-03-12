@@ -1,4 +1,4 @@
-const CACHE_NAME = 'vykazovnik-cache-v90';
+const CACHE_NAME = 'vykazovnik-cache-v97';
 const PRECACHE_URLS = ['/', '/offline.html', '/manifest.json', '/favicon.ico', '/robots.txt'];
 
 self.addEventListener('install', (event) => {

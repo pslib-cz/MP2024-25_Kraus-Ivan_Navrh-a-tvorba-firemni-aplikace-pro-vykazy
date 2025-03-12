@@ -1,0 +1,1509 @@
+@use "@/Variables" as *;
+
+.layoutContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 1.875rem;
+    justify-content: space-between;
+    flex: 1;
+    margin-bottom: 1rem;
+
+    @media (max-width: 1075px) {
+        height: 100%;
+        display: block;
+    }
+
+    .contentContainer {
+        margin-top: 1.875rem;
+        flex: 1;
+        margin-right: 1.875rem;
+        gap: 1.875rem;
+        display: flex;
+        flex-direction: column;
+
+        @media (max-width: 1075px) {
+            margin-right: 0;
+            margin-top: 0.5rem;
+            background-color: $off-white;
+            margin-bottom: 8rem;
+        }
+
+        .filters {
+            margin-top: 0.75rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+            justify-content: space-between;
+            width: 100%;
+
+            @media (max-width: 1075px) {
+                display: none;
+            }
+
+            &::after {
+                content: "";
+                display: block;
+                width: 100%;
+                height: 1px;
+                background-color: $grey-light;
+                margin-top: -0.25rem;
+            }
+
+            .contentLeft {
+                display: flex;
+                gap: 1rem;
+                align-items: center;
+                height: 3rem;
+
+                button {
+                    height: 2.5rem;
+                    background-color: $white;
+                    color: $blue-dark;
+                    border-radius: 0.5rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 0.5rem;
+                    cursor: pointer;
+                    text-wrap: nowrap;
+                    padding: 1rem;
+                    max-height: 2.25rem;
+                    border: 2px solid $blue-dark;
+                    font-weight: 500;
+                    font-size: 0.875rem;
+                    transition: $default-transition;
+
+                    &.newReportButton {
+                        background-color: $smworks-color;
+                        color: white;
+                        font-weight: bold;
+                        border-color: $smworks-color;
+
+                        &:hover {
+                            background-color: darken($smworks-color, 10%);
+                            border-color: darken($smworks-color, 10%);
+                        }
+                    }
+
+
+                    &:hover {
+                        background-color: $smworks-color;
+                        color: $white;
+                        border: 2px solid $smworks-color;
+                    }
+
+                    &.activeRangeButton {
+                        background-color: $smworks-color;
+                        color: $white;
+                        border: 2px solid $smworks-color;
+                    }
+
+                    &.activeToggle {
+                        background-color: $smworks-color;
+                        color: $white;
+                        border: 2px solid $smworks-color;
+
+                        svg {
+                            font-size: 1.15rem;
+                            height: 1.15rem;
+                        }
+                    }
+
+                    svg {
+                        font-size: 0.875rem;
+                        height: 0.875rem;
+                    }
+                }
+
+                .massApproveButton {
+                    background-color: $smworks-color;
+                    color: white;
+                    border-radius: 0.5rem;
+                    border-color: $smworks-color;
+
+                    &:hover {
+                        background-color: darken($smworks-color, 10%);
+                        border-color: darken($smworks-color, 10%);
+                    }
+                }
+
+                .checkbox {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.25rem;
+                    font-size: 0.875rem;
+                    font-weight: 500;
+                    color: $blue-dark;
+                    margin-left: 0.5rem;
+                }
+            }
+
+            .contentMiddle {
+                display: flex;
+                align-items: center;
+                margin: 0 auto;
+                width: fit-content;
+
+                .totalTime {
+                    font-weight: bold;
+                    color: $blue-dark;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 1.5rem;
+
+                    div {
+                        display: flex;
+                        align-items: end;
+                        gap: 0.25rem;
+
+                        .averageIcon,
+                        .sumIcon {
+                            color: $smworks-color;
+                            font-weight: bold;
+                            margin-right: 0.15rem;
+                            font-size: 1.15rem;
+                        }
+                    }
+                }
+            }
+
+            .contentRight {
+                display: flex;
+                gap: 1rem;
+                align-items: center;
+                height: fit-content;
+
+                .resetButton {
+                    background-color: $white;
+                    border-radius: 0.5rem;
+                    height: 2.5rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 0.875rem;
+                    font-weight: bold;
+                    color: $blue-dark;
+                    gap: 0.25rem;
+                    border: 2px solid $blue-dark;
+                    width: 5.25rem;
+                    transition: $default-transition;
+
+                    &:hover {
+                        background-color: $off-white;
+                        @media (max-width: 768px) {
+                            background-color: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        .advancedFilters {
+            max-height: 0;
+            overflow: hidden;
+            margin-bottom: 0;
+            transition: max-height 0.3s ease, margin-bottom 0.3s ease;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            width: 100%;
+
+            &.isOpen {
+                @media (min-width: 1076px) {
+                    max-height: fit-content;
+                    overflow: visible;
+                    margin-bottom: 1rem;
+                    padding-top: 1.5rem;
+                    padding-bottom: 1rem;
+                    border-bottom: 1px solid $grey-light;
+                }
+            }
+
+            .checkbox {
+                display: flex;
+                align-items: center;
+                gap: 0.25rem;
+                font-size: 0.875rem;
+            }
+
+            .exportButtonRow {
+                margin-left: auto;
+                .exportButton {
+                    background-color: $white;
+                    color: $blue-dark;
+                    max-height: 2.5rem;
+                    transition: $default-transition;
+
+                    &:hover {
+                        background-color: $smworks-color;
+                        border: 2px solid $smworks-color;
+                        color: $white;
+                    }
+                }
+            }
+
+            .deleteFiltersButton {
+                background: $smworks-color;
+                border: none;
+                color: $white;
+            }
+
+            .selectFilters {
+                display: flex;
+                gap: 2rem;
+                max-height: 12.25rem;
+            }
+
+            .checkboxLabel {
+                margin-top: 0.25rem;
+                font-size: 0.875rem;
+                font-weight: 500;
+                color: #1e1f23;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 0.25rem;
+
+                input {
+                    accent-color: $smworks-color;
+                }
+            }
+
+            button {
+                background-color: $smworks-color;
+                color: white;
+                border-radius: 8px;
+                padding: 0.5rem 1rem;
+                font-size: 0.875rem;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                cursor: pointer;
+
+                svg {
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        .mobileFilters {
+            display: none;
+
+            @media (max-width: 1075px) {
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+                max-width: 90vw;
+                width: 100%;
+                margin: 0 auto;
+                gap: 1.5rem;
+                margin-bottom: 1.5rem;
+
+                .mobileFilterRow {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                    justify-content: space-between;
+
+                    .selectWrapper {
+                        position: relative;
+
+                        select {
+                            font-size: 0.875rem;
+                            padding: 0.5rem;
+                            border: 2px solid $blue-dark;
+                            border-radius: 0.5rem;
+                            height: 2.5rem;
+                            font-weight: 500;
+                            width: 100%;
+                            appearance: none;
+                            -webkit-appearance: none;
+                            -moz-appearance: none;
+
+                            &:focus {
+                                outline: none;
+                                border-color: $smworks-color;
+                            }
+                        }
+
+                        .icon {
+                            position: absolute;
+                            right: 0.75rem;
+                            font-size: 0.75rem;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            pointer-events: none;
+                            color: $blue-dark;
+                        }
+                    }
+
+                    .massApproveButton {
+                        background-color: $smworks-color;
+                        color: white;
+                        border-radius: 0.5rem;
+                        border-color: $smworks-color;
+                        transition: $default-transition;
+                        padding: 0.5rem 1rem;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                        justify-content: center;
+                        box-shadow: none;
+                        height: 2.5rem;
+                        border: none;
+                        font-size: 0.875rem;
+                        font-weight: 500;
+
+                        &:hover {
+                            background-color: darken($smworks-color, 10%);
+                            border-color: darken($smworks-color, 10%);
+                        }
+                    }
+
+                    .rowContainer {
+                        display: flex;
+                        flex-direction: row;
+                        gap: 1.5rem;
+                        justify-content: space-between;
+                        align-items: start;
+
+                        .columnContainer {
+                            width: 50%;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 1.25rem;
+
+                            & > span {
+                                display: flex;
+                                align-items: center;
+                                justify-content: start;
+
+                                div {
+                                    display: flex;
+                                    align-items: center;
+                                    font-size: 1rem;
+                                    text-wrap: nowrap;
+                                }
+                            }
+
+                            .totalTime {
+                                font-weight: bold;
+                                color: $blue-dark;
+                                align-items: end;
+                                justify-content: end;
+                                gap: 0.25rem;
+                                flex-direction: column;
+                                font-size: 1rem;
+
+                                div {
+                                    display: flex;
+                                    align-items: end;
+                                    gap: 0.25rem;
+
+                                    .averageIcon,
+                                    .sumIcon {
+                                        color: $smworks-color;
+                                        font-weight: bold;
+                                        margin-right: 0.15rem;
+                                        font-size: 1.15rem;
+                                    }
+                                }
+                            }
+                        }
+
+                        .checkboxes {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 1.25rem;
+                            padding-bottom: 0.25rem;
+                            padding-top: 0.5rem;
+
+                            .checkbox {
+                                display: flex;
+                                align-items: center;
+                                gap: 0.5rem;
+                                font-size: 1rem;
+                                font-weight: 500;
+                                color: $blue-dark;
+                            }
+                        }
+
+                        .buttonContainer {
+                            display: flex;
+                            gap: 1rem;
+                            justify-content: flex-end;
+                            align-items: end;
+                            width: 100%;
+
+                            .filterToggle {
+                                background-color: $white;
+                                color: $blue-dark;
+                                border: 2px solid $blue-dark;
+                                padding: 0.5rem 1rem;
+                                font-weight: bold;
+                                font-size: 0.875rem;
+                                border-radius: 0.5rem;
+                                cursor: pointer;
+                                transition: all 0.2s;
+                                gap: 0.5rem;
+                                display: flex;
+                                height: 2.5rem;
+                                align-items: center;
+                                justify-content: center;
+
+                                &.activeToggle {
+                                    background-color: $smworks-color;
+                                    color: $white;
+                                    border-color: $smworks-color;
+
+                                    svg {
+                                        font-size: 1.15rem;
+                                    }
+                                }
+                            }
+
+                            .resetButton {
+                                background-color: $white;
+                                border: 2px solid $blue-dark;
+                                border-radius: 0.5rem;
+                                height: 2.5rem;
+                                width: 3rem;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+
+                                &:hover {
+                                    background-color: $off-white;
+                                    @media (max-width: 768px) {
+                                        background-color: none;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .sortContainer {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+
+                    .checkbox {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                        font-size: 0.875rem;
+                        font-weight: 500;
+                        color: $blue-dark;
+                        margin-left: 0.25rem;
+                    }
+
+                    .row {
+                        display: flex;
+                        align-items: end;
+                        justify-content: space-between;
+                        gap: 0.5rem;
+
+                        .sortSelect {
+                            width: 100%;
+
+                            label {
+                                font-size: 0.75rem;
+                                font-weight: bold;
+                                color: $blue-dark;
+                            }
+
+                            select {
+                                display: flex;
+                                align-items: center;
+                                gap: 0.5rem;
+                                height: 2.5rem;
+                                font-size: 0.875rem;
+                                padding: 0;
+                                padding-left: 1rem;
+                                padding-right: 1rem;
+                                border: 2px solid $blue-dark !important;
+                                font-weight: 500;
+                                width: 100% !important;
+
+                                option {
+                                    font-size: 0.875rem;
+                                    padding: 0;
+                                }
+                            }
+                        }
+
+                        .pageSizeSelector {
+                            position: relative;
+                            display: flex;
+                            align-items: center;
+                            gap: 0.5rem;
+                            width: 100%;
+                            max-width: 3.875rem;
+
+                            select {
+                                display: flex;
+                                align-items: center;
+                                gap: 0.5rem;
+                                height: 2.5rem;
+                                font-size: 0.875rem;
+                                padding: 0 1rem;
+                                border: 2px solid $blue-dark;
+                                font-weight: 500;
+                                appearance: none;
+                                -webkit-appearance: none;
+                                -moz-appearance: none;
+
+                                option {
+                                    font-size: 0.875rem;
+                                    padding: 0;
+                                }
+                            }
+
+                            .selectIcon {
+                                position: absolute;
+                                pointer-events: none;
+                                right: 1rem;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                font-size: 0.75rem;
+                                color: $grey-light;
+                            }
+                        }
+
+                        .sortOrderButton {
+                            width: 2.75rem;
+                            height: 2.5rem;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            background-color: $smworks-color;
+                            color: $white;
+                            border-radius: .5rem;
+                            padding: .5rem 1rem;
+                            font-size: 0.875rem;
+                            font-weight: bold;
+                            border: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        .advancedFiltersMobile {
+            transition: 0.3s max-height;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: -0.75rem;
+
+            &.hidden {
+                max-height: 0;
+                opacity: 0;
+                overflow: hidden;
+            }
+
+            &.visible {
+                max-height: 1500px;
+                opacity: 1;
+                overflow: visible;
+                padding-top: 1rem;
+            }
+
+            .filtersRow {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+
+                .searchContainer {
+                    label {
+                        font-weight: bold;
+                        font-size: 0.75rem;
+                        color: $blue-dark;
+                    }
+                }
+            }
+
+            .deleteFiltersButton {
+                background-color: $smworks-color;
+                color: $white;
+                border: none;
+                font-weight: 500;
+                height: 2.5rem;
+            }
+
+            .taskSelectContainer {
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                gap: 1.5rem;
+                width: 100%;
+
+                .inputGroup {
+                    width: 100%;
+                }
+
+                .checkbox {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    font-size: 0.875rem;
+                    font-weight: 500;
+                    color: $blue-dark;
+                    margin-left: 0.25rem;
+                }
+
+                .checkboxDisabled {
+                    margin-left: 0.25rem;
+                }
+            }
+
+            .datepickerRow {
+                gap: 1.5rem;
+
+                .datepickerContainer {
+                    margin-top: 1.25rem;
+                }
+            }
+
+            .sortContainerMobile {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                margin-top: 1rem;
+
+                label {
+                    font-size: 0.75rem;
+                    font-weight: bold;
+                    color: $blue-dark;
+                }
+
+                select {
+                    font-size: 0.875rem;
+                    padding: 0.5rem;
+                    border: 2px solid $blue-dark;
+                    border-radius: 0.5rem;
+                }
+            }
+
+            .pageSizeSelectorMobile {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+
+                label {
+                    font-size: 0.75rem;
+                    font-weight: bold;
+                    color: $blue-dark;
+                }
+
+                select {
+                    font-size: 0.875rem;
+                    padding: 0.5rem;
+                    border: 2px solid $blue-dark;
+                    border-radius: 0.5rem;
+                }
+            }
+
+            .checkAllContainer {
+                display: flex;
+                align-items: center;
+
+                label {
+                    font-weight: bold;
+                    font-size: 0.875rem;
+                    color: $blue-dark;
+                    display: flex;
+                    gap: 0.25rem;
+
+                    input {
+                        accent-color: $smworks-color;
+                    }
+                }
+            }
+
+            .exportButtonContainer {
+                display: flex;
+                justify-content: flex-end;
+
+                .exportButton {
+                    border: 2px solid $blue-dark;
+                    color: $blue-dark;
+                    background-color: $white;
+                    font-weight: 500;
+
+                    &:hover {
+                        color: $white;
+                        background-color: $smworks-color;
+                        border-color: $smworks-color;
+                    }
+                }
+            }
+        }
+
+        .content {
+            background-color: $off-white;
+            height: 100%;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            box-shadow: $shadow-dropdown;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            justify-content: center;
+            align-items: center;
+
+            @media (max-width: 1075px) {
+                box-shadow: none;
+                border: none;
+                width: 100%;
+                padding: 0;
+                overflow: hidden;
+            }
+
+            .responsiveContent {
+                display: none;
+
+                @media (max-width: 1075px) {
+                    display: block;
+                    width: 100%;
+                }
+            }
+
+            .error {
+                color: red;
+            }
+
+            .noResults {
+                text-align: center;
+                color: $smworks-color;
+                padding: 1rem;
+            }
+
+            .table {
+                width: 100%;
+                border-collapse: separate;
+                border-spacing: 0 0.5rem;
+                background-color: $off-white;
+                border: none;
+                margin-bottom: 0.25rem;
+
+                @media (max-width: 1075px) {
+                    display: none;
+                }
+
+                thead {
+                    tr {
+                        &:has(th.isSticky) {
+                            th {
+                                box-shadow: $smworks-color 0 0 0.25rem;
+                                background-color: $white;
+                                z-index: 10;
+                            }
+                        }
+
+                        .headerContent {
+                            input[type="checkbox"] {
+                                color: $grey-light;
+                                border-color: $grey-light;
+                                margin-right: 0.5rem;
+                            }
+                        }
+
+                        th {
+                            position: sticky;
+                            top: 0;
+                            left: 0;
+                            padding: 0.75rem 1rem;
+                            font-size: 0.875rem;
+                            font-weight: 500;
+                            color: $blue-dark;
+                            text-align: left;
+                            background-color: $white;
+                            border-top: 2px solid $grey-light;
+                            border-bottom: 2px solid $grey-light;
+                            box-shadow: inset 1px 0 0 $grey-light, inset -1px 0 0 $grey-light;
+                            transition: $default-transition;
+
+                            &.smallColumn {
+                                .headerContent {
+                                    max-width: 3rem;
+                                    margin: 0 auto;
+                                }
+                            }
+
+                            &.slim {
+                                width: 75px;
+                                min-width: 75px;
+                                max-width: 75px;
+                            }
+
+                            &.actionColumn {
+                                width: 6.626rem;
+                                text-align: center;
+
+                                .headerContent {
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+                            }
+
+                            &:first-child {
+                                border-left: 2px solid $grey-light;
+                                border-top-left-radius: 0.5rem;
+                                box-shadow: inset -0.5px 0 0 $grey-light;
+                            }
+
+                            &:last-child {
+                                border-right: 2px solid $grey-light;
+                                border-top-right-radius: 0.5rem;
+                                box-shadow: inset 0.5px 0 0 $grey-light;
+                            }
+
+                            &:hover {
+                                cursor: pointer;
+                                background-color: $off-white;
+                            }
+
+                            .headerContent {
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+
+                                .headerTitle {
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 0.5rem;
+
+                                    svg {
+                                        font-size: 0.875rem;
+                                        color: $blue-dark;
+                                    }
+                                }
+
+                                svg {
+                                    width: 1.2rem;
+                                    text-align: center;
+                                    display: inline-block;
+
+                                    &.iconGrey {
+                                        color: $grey-light;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                tbody {
+                    font-weight: 500;
+
+                    tr {
+                        background-color: $white;
+                        box-shadow: $shadow-dropdown;
+                        border-radius: 0.5rem;
+                        overflow: hidden;
+                        transition: $default-transition;
+
+                        &.approved {
+                            opacity: 0.75 !important;
+                        }
+
+                        &.unknown {
+                            td {
+                                color: red;
+                                border-top: 1px solid $action-red;
+                                border-bottom: 1px solid $action-red;
+                                border-left: 0.5px solid $action-red;
+
+                                &:has(.actionContainer) {
+                                    border-left: 0;
+                                }
+
+                                .actionContainer {
+                                    button {
+                                        &:first-child {
+                                            border-width: 1px;
+                                        }
+                                    }
+                                }
+
+                                &:first-child {
+                                    border-left: 1px solid $action-red;
+                                }
+
+                                svg {
+                                    color: $action-red;
+                                }
+                            }
+                        }
+
+                        &:hover {
+                            td {
+                                background-color: $off-white;
+                            }
+                        }
+
+                        &:not(:last-child) {
+                            margin-bottom: 0.5rem;
+                        }
+
+                        td {
+                            font-weight: 500;
+                            font-size: 0.875rem;
+                            color: $blue-dark;
+                            text-align: left;
+                            background-color: $white;
+                            border-top: 1px solid $grey-light;
+                            border-bottom: 1px solid $grey-light;
+                            box-shadow: inset 0.5px 0 0 $grey-light, inset -0.5px 0 0 $grey-light;
+                            padding-left: 0.75rem;
+                            transition: $default-transition;
+
+                            .selectionDateCell {
+                                input[type="checkbox"] {
+                                    color: $grey-light;
+                                    border-color: $grey-light;
+                                    margin-left: 0;
+                                    height: 1.25rem;
+                                    width: 1.25rem;
+                                    margin-bottom: -0.35rem;
+                                }
+
+                                span {
+                                    margin-left: 0.5rem;
+                                }
+                            }
+
+                            &.jobtitle {
+                                text-align: center;
+                                padding-left: 0;
+                            }
+
+                            &.slim {
+                                width: 70px;
+                                min-width: 70px;
+                                max-width: 70px;
+                            }
+
+                            &.smallColumn {
+                                width: 5%;
+                                text-align: center;
+                                padding-left: 0;
+                            }
+
+                            &:has(.actionContainer) {
+                                padding: 0;
+                                height: 1px;
+
+                                .actionContainer {
+                                    display: flex;
+                                    align-items: stretch;
+                                    height: 100%;
+                                    justify-content: center;
+                                    gap: 0;
+
+                                    .actionButton {
+                                        min-width: 3.313rem;
+                                        width: 100%;
+                                        min-height: 3rem;
+                                        padding: 0;
+                                        background-color: $white;
+                                        border: 1px solid $blue-dark;
+                                        border-radius: 0;
+                                        color: $blue-dark;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        font-size: 0.875rem;
+                                        transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+
+                                        svg {
+                                            font-size: 1rem !important;
+                                        }
+
+                                        &:last-child {
+                                            border-top-right-radius: 0.5rem;
+                                            border-bottom-right-radius: 0.5rem;
+                                        }
+
+                                        &.editButton {
+                                            border-color: $action-yellow;
+                                            color: $action-yellow;
+                                            background-color: transparent;
+
+                                            &:hover {
+                                                background-color: $action-yellow;
+                                                border-color: $action-yellow;
+                                                color: #fff;
+                                                box-shadow: 0 2px 4px rgba(255, 167, 38, 0.5);
+                                            }
+                                        }
+
+
+                                        &.deleteButton {
+                                            border-color: $action-red;
+                                            color: $action-red;
+                                            background-color: transparent;
+
+                                            &:hover {
+                                                background-color: $action-red;
+                                                border-color: #e6510f;
+                                                color: #fff;
+                                                box-shadow: 0 2px 4px rgba(230, 81, 0, 0.5);
+                                            }
+                                        }
+
+                                        &.approveButton {
+                                            border-color: $action-green !important;
+                                            background-color: $action-green;
+                                            color: $white;
+
+                                            svg {
+                                                color: $white;
+                                                font-weight: bold;
+                                            }
+
+                                            &:hover {
+                                                background-color: darken($action-green, 10%) !important;
+                                                border-color: darken($action-green, 10%) !important;
+                                                color: $white;
+
+                                            }
+                                        }
+
+                                        svg {
+                                            color: inherit;
+                                            transition: color 0.2s;
+                                            font-size: 1rem;
+                                        }
+                                    }
+                                }
+                            }
+
+                            &:first-child {
+                                border-left: 1px solid $grey-light;
+                                border-top-left-radius: 0.5rem;
+                                border-bottom-left-radius: 0.5rem;
+                                padding-left: 1rem;
+                                box-shadow: inset -0.5px 0 0 $grey-light;
+                            }
+
+                            &:last-child {
+                                border-right: 1px solid $grey-light;
+                                border-top-right-radius: 0.5rem;
+                                border-bottom-right-radius: 0.5rem;
+                                box-shadow: inset 0.5px 0 0 $grey-light;
+                            }
+                        }
+                    }
+
+                    border-collapse: collapse;
+                }
+            }
+
+            .pagination {
+                display: flex;
+                height: 2.5rem;
+                width: 100%;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: auto;
+
+                @media (max-width: 1065px) {
+                    justify-content: center;
+                    margin: 0 auto;
+                    width: unset;
+                    margin-top: 3rem;
+                }
+
+                .pageSizeSelector {
+                    @media (max-width: 1065px) {
+                        display: none;
+                    }
+
+                    width: min-content;
+                    max-width: 5.75rem;
+                    position: relative;
+                    label {
+                        position: absolute;
+                        top: -1.25rem;
+                        font-size: 0.75rem;
+                        font-weight: bold;
+                    }
+
+                    :global(.react-select-container) {
+                        border: 1px solid $blue-dark;
+                        border-radius: 0.5rem;
+                        font-size: 0.85rem;
+                        width: 5.75rem;
+                        height: 1.75rem;
+                    }
+
+                    :global(.react-select__control) {
+                        height: fit-content;
+                        box-shadow: none;
+                        border: none;
+                        background: none;
+                        margin-top: -1.1rem;
+                        padding: 0;
+                    }
+
+                    :global(.react-select__single-value) {
+                        color: $blue-dark;
+                        font-weight: 500;
+                        font-size: 0.75rem;
+                    }
+
+                    :global(.react-select__menu) {
+                        border-radius: 0.5rem;
+                        font-size: 0.75rem;
+                        border: 2px solid $blue-dark;
+                    }
+                }
+
+                .totalNumber {
+                    font-size: 0.75rem;
+                    color: $grey;
+                    margin-top: auto;
+
+                    @media (max-width: 1065px) {
+                        display: none;
+                    }
+
+                    p {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.filterButton {
+    background-color: #FFFFFF;
+    border-radius: 0.5rem;
+    height: 2.5rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: bold;
+    color: #1E1F23;
+    border: 2px solid #1E1F23;
+    width: 100%;
+    max-width: 5.25rem;
+    transition: all 0.3s;
+}
+
+.filterButtonActive {
+    background-color: $smworks-color;
+    border-radius: 0.5rem;
+    height: 2.5rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: bold;
+    border: none;
+    width: 100%;
+    max-width: 5.25rem;
+    transition: all 0.3s;
+    color: $white;
+
+    svg {
+        font-size: 1.15rem;
+    }
+}
+
+.noResults {
+    text-align: center;
+    color: $smworks-color;
+    padding: 1rem;
+}
+
+.smallColumn {
+    width: 5%;
+}
+
+.activeRangeButton {
+    background-color: darken($smworks-color, 10%);
+    color: $white !important;
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background-color: $grey-light;
+}
+
+.datepickerRow {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    .datepickerContainer {
+        display: flex;
+        align-items: center;
+        gap: 0;
+        position: relative;
+
+        .react-datepicker__tab-loop {
+            position: absolute;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+        }
+
+        input {
+            border: 2px solid $blue-dark;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            color: $blue-dark;
+            transition: $default-transition;
+            width: 100%;
+            font-weight: 500;
+            max-width: 8rem;
+            max-height: 2.15rem;
+
+            &:focus {
+                outline: none;
+                border-color: $smworks-color;
+                box-shadow: 0 0 0.25rem rgba(235, 102, 8, 0.5);
+            }
+        }
+
+        label {
+            font-weight: bold;
+            font-size: 0.75rem;
+            margin-bottom: 0.5rem;
+            color: $blue-dark;
+            position: absolute;
+            top: -1.25rem;
+            left: 0;
+        }
+
+        .react-datepicker-wrapper {
+            flex-grow: 1;
+        }
+
+        .navButtonLeft,
+        .navButtonRight {
+            background-color: $white !important;
+            border: 2px solid $blue-dark;
+            color: $blue-dark !important;
+            font-size: 0.875rem;
+            font-weight: bold;
+            padding: 0.5rem 0.75rem;
+            max-height: 2.5rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            width: 2.25rem;
+            height: 2.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: $default-transition;
+
+            &:hover {
+                background-color: $off-white;
+            }
+
+            svg {
+                font-size: 0.875rem;
+            }
+
+            &:focus {
+                outline: none;
+                box-shadow: 0 0 4px rgba(235, 102, 8, 0.5);
+            }
+        }
+
+        .navButtonLeft {
+            margin-right: 0.25rem;
+        }
+
+        .navButtonRight {
+            margin-left: 0.25rem;
+        }
+    }
+}
+
+@media (max-width: 1065px) {
+    .datepickerRow {
+        display: flex;
+        flex-direction: column;
+        gap: 2.25rem;
+        width: 100%;
+        margin-bottom: 0.5rem;
+
+        .navButtonLeft, .navButtonRight {
+            max-height: 2.5rem;
+        }
+
+        .datepickerContainer {
+            width: 100%;
+            gap: 0.5rem;
+
+            input {
+                width: 100%;
+                max-width: unset !important;
+                max-height: 2.5rem !important;
+            }
+        }
+
+        label {
+            font-size: 0.75rem;
+            font-weight: bold;
+            color: $blue-dark;
+        }
+    }
+}
+
+.hoverTooltip {
+    display: inline-block;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    border: none;
+    position: relative;
+    color: $blue-dark;
+}
+
+.hoverTooltip .hoverTooltipText {
+    visibility: hidden;
+    width: max-content;
+    background-color: $white;
+    box-shadow: $shadow-dropdown;
+    color: $grey;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    z-index: 1;
+    font-size: 0.75rem;
+    bottom: 115%;
+    left: 50%;
+    display: block;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: $default-transition;
+    position: absolute;
+}
+
+.hoverTooltip:hover .hoverTooltipText {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(-5px) translateX(-50%);
+}
+
+.noReports {
+    text-align: center;
+    color: $smworks-color;
+    padding: 1rem;
+}
+
+.sortSelect {
+    position: relative;
+    display: inline-block;
+
+    label {
+        font-size: 0.75rem;
+        font-weight: bold;
+        color: $blue-dark;
+    }
+
+    .selectWrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            font-size: 0.875rem;
+            padding: 0.5rem 1rem;
+            border: 2px solid $blue-dark;
+            border-radius: 0.5rem;
+            width: 100%;
+            font-weight: 500;
+
+            &:focus {
+                outline: none;
+                border-color: $smworks-color;
+            }
+        }
+
+        .icon {
+            position: absolute;
+            right: 1rem;
+            font-size: 0.75rem;
+            pointer-events: none;
+            color: #004080;
+        }
+    }
+}
+
+
+.taskSelectContainer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .checkbox {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: $blue-dark;
+
+    }
+
+    .checkboxDisabled {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: $grey-light;
+
+        input {
+            border: 2px solid $grey-light;
+        }
+    }
+}
+
+.approvedBadge {
+    svg {
+        font-size: 1rem;
+        color: rgba($grey, 0.65);
+    }
+}
+
+.notApprovedBadge {
+    svg {
+        font-size: 1rem;
+        color: $grey;
+    }
+}
+
+
+tr.emptySpacerRow {
+    height: 0;
+    background-color: transparent !important;
+    border: none;
+    box-shadow: none !important;
+    td {
+        border: none !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+    }
+}
