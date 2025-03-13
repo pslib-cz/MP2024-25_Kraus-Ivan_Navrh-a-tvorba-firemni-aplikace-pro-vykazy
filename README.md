@@ -20,7 +20,7 @@
     <p>Oficiální dokument maturitní práce je dostupný zde:</p>
     <ul>
         <li><strong>Maturitní práce</strong>: 
-            <a href="Dokumentace/Návrh databáze a API endpointů/Dokumentace aplikace Výkazovník.docx">
+            <a href="Dokumentace/Dokument%20maturitní%20práce/MP2024-25_Kraus-Ivan_Navrh-a-tvorba-firemni-aplikace-pro-vykazy.docx">
                 Dokument maturitní práce
             </a>
         </li>
