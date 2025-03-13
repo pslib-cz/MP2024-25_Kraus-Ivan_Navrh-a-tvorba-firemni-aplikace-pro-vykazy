@@ -19,8 +19,13 @@
     <h2 class="section-title">Dokument maturitní práce</h2>
     <p>Oficiální dokument maturitní práce je dostupný zde:</p>
     <ul>
-        <li><strong>Maturitní práce</strong>: 
+        <li><strong>Maturitní práce (.docx)</strong>: 
             <a href="Dokumentace/Dokument%20maturitní%20práce/MP2024-25_Kraus-Ivan_Navrh-a-tvorba-firemni-aplikace-pro-vykazy.docx">
+                Dokument maturitní práce
+            </a>
+        </li>
+         <li><strong>Maturitní práce (pdf)</strong>: 
+            <a href="Dokumentace/Dokument%20maturitní%20práce/MP2024-25_Kraus-Ivan_Navrh-a-tvorba-firemni-aplikace-pro-vykazy.pdf">
                 Dokument maturitní práce
             </a>
         </li>
